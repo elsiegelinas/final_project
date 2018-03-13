@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the User_review resource:
+  # CREATE
+  get "/user_reviews/new", :controller => "user_reviews", :action => "new"
+  post "/create_user_review", :controller => "user_reviews", :action => "create"
+
+  # READ
+  get "/user_reviews", :controller => "user_reviews", :action => "index"
+  get "/user_reviews/:id", :controller => "user_reviews", :action => "show"
+
+  # UPDATE
+  get "/user_reviews/:id/edit", :controller => "user_reviews", :action => "edit"
+  post "/update_user_review/:id", :controller => "user_reviews", :action => "update"
+
+  # DELETE
+  get "/delete_user_review/:id", :controller => "user_reviews", :action => "destroy"
+  #------------------------------
+
   # Routes for the Tag resource:
   # CREATE
   get "/tags/new", :controller => "tags", :action => "new"
