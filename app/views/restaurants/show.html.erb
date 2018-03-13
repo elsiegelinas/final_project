@@ -49,13 +49,25 @@
       <dd><%= @restaurant.other_top_list %></dd>
 
       <dt>Neighborhood</dt>
-      <dd><%= @restaurant.neighborhood_id %></dd>
+      <dd>
+        <% if @restaurant.neighborhood.present? %>
+          <a href="/neighborhoods/<%= @restaurant.neighborhood_id %>">
+            <%= @restaurant.neighborhood.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Price</dt>
       <dd><%= @restaurant.price %></dd>
 
       <dt>Cuisine</dt>
-      <dd><%= @restaurant.cuisine_id %></dd>
+      <dd>
+        <% if @restaurant.cuisine.present? %>
+          <a href="/cuisines/<%= @restaurant.cuisine_id %>">
+            <%= @restaurant.cuisine.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Hours</dt>
       <dd><%= @restaurant.hours %></dd>

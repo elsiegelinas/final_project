@@ -9,10 +9,22 @@
       <dd><%= @user_review.rating %></dd>
 
       <dt>User</dt>
-      <dd><%= @user_review.user_id %></dd>
+      <dd>
+        <% if @user_review.user.present? %>
+          <a href="/users/<%= @user_review.user_id %>">
+            <%= @user_review.user.email %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Restaurant</dt>
-      <dd><%= @user_review.restaurant_id %></dd>
+      <dd>
+        <% if @user_review.restaurant.present? %>
+          <a href="/restaurants/<%= @user_review.restaurant_id %>">
+            <%= @user_review.restaurant.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Comments</dt>
       <dd><%= @user_review.comments %></dd>

@@ -53,9 +53,21 @@
         <td><%= restaurant.eater_list %></td>
         <td><%= restaurant.infatuation_list %></td>
         <td><%= restaurant.other_top_list %></td>
-        <td><%= restaurant.neighborhood.name %></td>
+        <td>
+          <% if restaurant.neighborhood.present? %>
+            <a href="/neighborhoods/<%= restaurant.neighborhood.id %>">
+              <%= restaurant.neighborhood.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= restaurant.price %></td>
-        <td><%= restaurant.cuisine.name %></td>
+        <td>
+          <% if restaurant.cuisine.present? %>
+            <a href="/cuisines/<%= restaurant.cuisine.id %>">
+              <%= restaurant.cuisine.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= restaurant.hours %></td>
         <td>
           <a href="/restaurants/<%= restaurant.id %>" class="btn btn-primary">Show</a>

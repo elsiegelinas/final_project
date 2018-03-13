@@ -19,8 +19,20 @@
       <% @user_reviews.each do |user_review| %>
       <tr>
         <td><%= user_review.rating %></td>
-        <td><%= user_review.user.email %></td>
-        <td><%= user_review.restaurant.name %></td>
+        <td>
+          <% if user_review.user.present? %>
+            <a href="/users/<%= user_review.user.id %>">
+              <%= user_review.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if user_review.restaurant.present? %>
+            <a href="/restaurants/<%= user_review.restaurant.id %>">
+              <%= user_review.restaurant.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= user_review.comments %></td>
         <td>
           <a href="/user_reviews/<%= user_review.id %>" class="btn btn-primary">Show</a>
