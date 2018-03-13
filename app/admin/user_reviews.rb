@@ -1,4 +1,6 @@
 ActiveAdmin.register UserReview do
+
+ permit_params :rating, :user_id, :restaurant_id, :comments
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
