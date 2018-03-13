@@ -1,4 +1,14 @@
 class UserReviewsController < ApplicationController
+  before_action :current_user_must_be_user_review_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_user_review_user
+    user_review = UserReview.find(params[:id])
+
+    unless current_user == user_review.user
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @user_reviews = UserReview.all
 

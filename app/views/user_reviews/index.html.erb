@@ -24,8 +24,11 @@
         <td><%= user_review.comments %></td>
         <td>
           <a href="/user_reviews/<%= user_review.id %>" class="btn btn-primary">Show</a>
-          <a href="/user_reviews/<%= user_review.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_user_review/<%= user_review.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == user_review.user %>
+            <a href="/user_reviews/<%= user_review.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_user_review/<%= user_review.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>
