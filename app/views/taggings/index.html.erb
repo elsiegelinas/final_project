@@ -17,7 +17,7 @@
 
       <% @taggings.each do |tagging| %>
       <tr>
-        <td><%= tagging.restaurant_id %></td>
+        <td><%= tagging.restaurant.name %></td>
         <td><%= tagging.tag_id %></td>
         <td><%= tagging.user_id %></td>
         <td>
