@@ -1,6 +1,6 @@
 class TaggingsController < ApplicationController
   def index
-    @taggings = Tagging.all
+    @taggings = Tagging.page(params[:page]).per(10)
 
     render("taggings/index.html.erb")
   end
