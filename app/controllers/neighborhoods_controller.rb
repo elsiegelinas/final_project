@@ -6,6 +6,7 @@ class NeighborhoodsController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.new
     @neighborhood = Neighborhood.find(params[:id])
 
     render("neighborhoods/show.html.erb")
