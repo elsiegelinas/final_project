@@ -1,0 +1,73 @@
+<div class="page-header">
+  <h3>Restaurant #<%= @restaurant.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Name</dt>
+      <dd><%= @restaurant.name %></dd>
+
+      <dt>Description</dt>
+      <dd><%= @restaurant.description %></dd>
+
+      <dt>Address</dt>
+      <dd><%= @restaurant.address %></dd>
+
+      <dt>Forecast rating</dt>
+      <dd><%= @restaurant.forecast_rating %></dd>
+
+      <dt>Number of reviews</dt>
+      <dd><%= @restaurant.number_of_reviews %></dd>
+
+      <dt>Google rating</dt>
+      <dd><%= @restaurant.google_rating %></dd>
+
+      <dt>Opentable rating</dt>
+      <dd><%= @restaurant.opentable_rating %></dd>
+
+      <dt>Infatuation rating</dt>
+      <dd><%= @restaurant.infatuation_rating %></dd>
+
+      <dt>Tripadvisor rating</dt>
+      <dd><%= @restaurant.tripadvisor_rating %></dd>
+
+      <dt>Yelp rating</dt>
+      <dd><%= @restaurant.yelp_rating %></dd>
+
+      <dt>Eater list</dt>
+      <dd><%= @restaurant.eater_list %></dd>
+
+      <dt>Infatuation list</dt>
+      <dd><%= @restaurant.infatuation_list %></dd>
+
+      <dt>Other top list</dt>
+      <dd><%= @restaurant.other_top_list %></dd>
+
+      <dt>Neighborhood</dt>
+      <dd><%= @restaurant.neighborhood_id %></dd>
+
+      <dt>Price</dt>
+      <dd><%= @restaurant.price %></dd>
+
+      <dt>Cuisine</dt>
+      <dd><%= @restaurant.cuisine_id %></dd>
+
+      <dt>Hours</dt>
+      <dd><%= @restaurant.hours %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/restaurants" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/restaurants/<%= @restaurant.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_restaurant/<%= @restaurant.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

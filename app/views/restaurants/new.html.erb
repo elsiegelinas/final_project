@@ -1,0 +1,181 @@
+<!-- Validation failure messages -->
+<% if @restaurant.errors.any? %>
+  <% @restaurant.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Add Restaurant</h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/create_restaurant" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @restaurant.name %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Description" class="form-control" value="<%= @restaurant.description %>">
+      </div>
+
+      <!-- Label and input for address -->
+      <div class="form-group">
+        <label for="address" class="control-label">
+          Address
+        </label>
+
+        <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @restaurant.address %>">
+      </div>
+
+      <!-- Label and input for forecast_rating -->
+      <div class="form-group">
+        <label for="forecast_rating" class="control-label">
+          Forecast rating
+        </label>
+
+        <input type="text" id="forecast_rating" name="forecast_rating" placeholder="Forecast rating" class="form-control" value="<%= @restaurant.forecast_rating %>">
+      </div>
+
+      <!-- Label and input for number_of_reviews -->
+      <div class="form-group">
+        <label for="number_of_reviews" class="control-label">
+          Number of reviews
+        </label>
+
+        <input type="text" id="number_of_reviews" name="number_of_reviews" placeholder="Number of reviews" class="form-control" value="<%= @restaurant.number_of_reviews %>">
+      </div>
+
+      <!-- Label and input for google_rating -->
+      <div class="form-group">
+        <label for="google_rating" class="control-label">
+          Google rating
+        </label>
+
+        <input type="text" id="google_rating" name="google_rating" placeholder="Google rating" class="form-control" value="<%= @restaurant.google_rating %>">
+      </div>
+
+      <!-- Label and input for opentable_rating -->
+      <div class="form-group">
+        <label for="opentable_rating" class="control-label">
+          Opentable rating
+        </label>
+
+        <input type="text" id="opentable_rating" name="opentable_rating" placeholder="Opentable rating" class="form-control" value="<%= @restaurant.opentable_rating %>">
+      </div>
+
+      <!-- Label and input for infatuation_rating -->
+      <div class="form-group">
+        <label for="infatuation_rating" class="control-label">
+          Infatuation rating
+        </label>
+
+        <input type="text" id="infatuation_rating" name="infatuation_rating" placeholder="Infatuation rating" class="form-control" value="<%= @restaurant.infatuation_rating %>">
+      </div>
+
+      <!-- Label and input for tripadvisor_rating -->
+      <div class="form-group">
+        <label for="tripadvisor_rating" class="control-label">
+          Tripadvisor rating
+        </label>
+
+        <input type="text" id="tripadvisor_rating" name="tripadvisor_rating" placeholder="Tripadvisor rating" class="form-control" value="<%= @restaurant.tripadvisor_rating %>">
+      </div>
+
+      <!-- Label and input for yelp_rating -->
+      <div class="form-group">
+        <label for="yelp_rating" class="control-label">
+          Yelp rating
+        </label>
+
+        <input type="text" id="yelp_rating" name="yelp_rating" placeholder="Yelp rating" class="form-control" value="<%= @restaurant.yelp_rating %>">
+      </div>
+
+      <!-- Label and input for eater_list -->
+      <div class="form-group">
+        <label for="eater_list" class="control-label">
+          Eater list
+        </label>
+
+        <input type="text" id="eater_list" name="eater_list" placeholder="Eater list" class="form-control" value="<%= @restaurant.eater_list %>">
+      </div>
+
+      <!-- Label and input for infatuation_list -->
+      <div class="form-group">
+        <label for="infatuation_list" class="control-label">
+          Infatuation list
+        </label>
+
+        <input type="text" id="infatuation_list" name="infatuation_list" placeholder="Infatuation list" class="form-control" value="<%= @restaurant.infatuation_list %>">
+      </div>
+
+      <!-- Label and input for other_top_list -->
+      <div class="form-group">
+        <label for="other_top_list" class="control-label">
+          Other top list
+        </label>
+
+        <input type="text" id="other_top_list" name="other_top_list" placeholder="Other top list" class="form-control" value="<%= @restaurant.other_top_list %>">
+      </div>
+
+      <!-- Label and input for neighborhood_id -->
+      <div class="form-group">
+        <label for="neighborhood_id" class="control-label">
+          Neighborhood
+        </label>
+
+        <input type="text" id="neighborhood_id" name="neighborhood_id" placeholder="Neighborhood" class="form-control" value="<%= @restaurant.neighborhood_id %>">
+      </div>
+
+      <!-- Label and input for price -->
+      <div class="form-group">
+        <label for="price" class="control-label">
+          Price
+        </label>
+
+        <input type="text" id="price" name="price" placeholder="Price" class="form-control" value="<%= @restaurant.price %>">
+      </div>
+
+      <!-- Label and input for cuisine_id -->
+      <div class="form-group">
+        <label for="cuisine_id" class="control-label">
+          Cuisine
+        </label>
+
+        <input type="text" id="cuisine_id" name="cuisine_id" placeholder="Cuisine" class="form-control" value="<%= @restaurant.cuisine_id %>">
+      </div>
+
+      <!-- Label and input for hours -->
+      <div class="form-group">
+        <label for="hours" class="control-label">
+          Hours
+        </label>
+
+        <input type="text" id="hours" name="hours" placeholder="Hours" class="form-control" value="<%= @restaurant.hours %>">
+      </div>
+
+      <button class="btn btn-success">
+        Create Restaurant
+      </button>
+      or
+      <a href="/restaurants">Cancel</a>
+    </form>
+  </div>
+</div>
